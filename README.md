@@ -46,3 +46,16 @@ The following code trains the Perceptron to act as a [NAND gate](http://en.wikip
     echo $p->test(array(0,1))? "Correct\n": "Incorrect\n";
     echo $p->test(array(0,0))? "Correct\n": "Incorrect\n";
     echo $p->test(array(1,0))? "Correct\n": "Incorrect\n";
+
+##Getting Perceptron
+
+Add the following to your [composer.json](http://getcomposer.org) file and run `composer update`.
+
+```
+"require": {
+        "jtet/perceptron": "dev-master"
+    }
+```
+
+##License
+Perceptron is available for your use under the [OSL-3.0](http://www.spdx.org/licenses/OSL-3.0#licenseText) license.
