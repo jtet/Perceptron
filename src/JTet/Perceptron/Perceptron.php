@@ -104,6 +104,8 @@ class Perceptron
                 $this->weightVector[$i] + $this->learningRate * ((int)$outcome - (int)$output) * $inputVector[$i];
         }
 
+        $this->bias = $this->bias + [(int)$outcome - (int)$output];
+
         $this->errorSum += (int)$outcome - (int)$output;
         $this->iterationError = 1 / $this->iterations * $this->errorSum;
     }
