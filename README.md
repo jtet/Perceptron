@@ -1,6 +1,8 @@
 Perceptron
 ==========
 
+[![Build Status](https://travis-ci.org/jtet/Perceptron.png)](https://travis-ci.org/jtet/Perceptron)
+
 ##Training
 
     while($p->getIterationError() > $x)
