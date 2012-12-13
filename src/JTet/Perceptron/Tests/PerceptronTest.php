@@ -98,4 +98,36 @@ class PerceptronTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($p->test(array(1,0)));
         $this->assertFalse($p->test(array(0,0)));
     }
+
+    public function testNOR()
+    {
+        $p = new \JTet\Perceptron\Perceptron(2, 0, .1);
+
+        $i = 0;
+        while($i < 1000)
+        {
+            $input = array(0, 0);
+            $output = true;
+            $p->train($input, $output);
+
+            $input = array(0, 1);
+            $output = false;
+            $p->train($input, $output);
+
+            $input = array(1,0);
+            $output = false;
+            $p->train($input, $output);
+
+            $input = array(1,1);
+            $output = false;
+            $p->train($input, $output);
+
+            $i++;
+        }
+
+        $this->assertFalse($p->test(array(1,1)));
+        $this->assertFalse($p->test(array(0,1)));
+        $this->assertFalse($p->test(array(1,0)));
+        $this->assertTrue($p->test(array(0,0)));
+    }
 }
