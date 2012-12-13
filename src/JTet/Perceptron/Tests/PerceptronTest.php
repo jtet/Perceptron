@@ -1,6 +1,17 @@
 <?php
+/**
+ * JTet\Perceptron\Test
+ * https://github.com/jtet/Perceptron
+ *
+ * Please see http://www.spdx.org/licenses/OSL-3.0#licenseText
+ * for license information.
+ */
 namespace JTet\Perceptron\Tests;
 
+/**
+ * Common Linearly Seperable Functions which are known to be
+ * learnable by a Perceptron
+ */
 class PerceptronTest extends \PHPUnit_Framework_TestCase
 {
     public function testNAND()

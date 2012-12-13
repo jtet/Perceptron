@@ -8,7 +8,10 @@
  */
 namespace JTet\Perceptron;
 
-
+/**
+ * Perceptron for more information see:
+ * http://en.wikipedia.org/wiki/Perceptron
+ */
 class Perceptron
 {
     protected $vectorLength;

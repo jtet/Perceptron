@@ -3,6 +3,15 @@ Perceptron
 
 [![Build Status](https://travis-ci.org/jtet/Perceptron.png?branch=master)](https://travis-ci.org/jtet/Perceptron)
 
+##What is a perceptron
+
+```
+"the perceptron is an algorithm for supervised classification of an input into one of two possible outputs.
+It is a type of linear classifier, i.e. a classification algorithm that makes its predictions based on a
+linear predictor function combining a set of weights with the feature vector describing a given input."
+```
+read more at [http://en.wikipedia.org/wiki/Perceptron](http://en.wikipedia.org/wiki/Perceptron)
+
 ##Training
 
 ```php
