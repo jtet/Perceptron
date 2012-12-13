@@ -1,5 +1,13 @@
 <?php
+/**
+ * JTet\Perceptron
+ * https://github.com/jtet/Perceptron
+ *
+ * Please see http://www.spdx.org/licenses/OSL-3.0#licenseText
+ * for license information.
+ */
 namespace JTet\Perceptron;
+
 
 class Perceptron
 {
