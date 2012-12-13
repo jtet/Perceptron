@@ -19,7 +19,7 @@ class Perceptron
      * @param $learningRate
      * @throws \InvalidArgumentException
      */
-    public function __construct($vectorLength, $bias, $learningRate)
+    public function __construct($vectorLength, $bias = 0, $learningRate = .5)
     {
         if ($vectorLength < 1) {
             throw new \InvalidArgumentException();
@@ -45,6 +45,18 @@ class Perceptron
     }
 
     /**
+     * @param $weightVector
+     * @throws \InvalidArgumentException
+     */
+    public function setWeightVector($weightVector)
+    {
+        if (!is_array($weightVector) || count($weightVector) != $this->vectorLength) {
+            throw new \InvalidArgumentException();
+        }
+        $this->weightVector = $weightVector;
+    }
+
+    /**
      * @return int
      */
     public function getBias()
@@ -53,11 +65,35 @@ class Perceptron
     }
 
     /**
-     * @param int $bias
+     * @param float $bias
+     * @throws \InvalidArgumentException
      */
     public function setBias($bias)
     {
+        if (!is_numeric($bias)) {
+            throw new \InvalidArgumentException();
+        }
         $this->bias = $bias;
+    }
+
+    /**
+     * @return float
+     */
+    public function getLearningRate()
+    {
+        return $this->learningRate;
+    }
+
+    /**
+     * @param float $learningRate
+     * @throws \InvalidArgumentException
+     */
+    public function setLearningRate($learningRate)
+    {
+        if (!is_numeric($learningRate) || $learningRate <= 0 || $learningRate > 1) {
+            throw new \InvalidArgumentException();
+        }
+        $this->learningRate = $learningRate;
     }
 
     /**

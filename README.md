@@ -18,7 +18,7 @@ Perceptron
 
 The following code trains the Perceptron to act as a [NAND gate](http://en.wikipedia.org/wiki/NAND_gate)
 
-    $p = new \JTet\Perceptron\Perceptron(2, 0, .1);
+    $p = new \JTet\Perceptron\Perceptron(2);
 
     $i = 0;
     while($i < 100000)
