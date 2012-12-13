@@ -3,7 +3,7 @@ Perceptron
 
 [![Build Status](https://travis-ci.org/jtet/Perceptron.png?branch=master)](https://travis-ci.org/jtet/Perceptron)
 
-##What is a perceptron
+##What is a Perceptron?
 
 ```
 "the perceptron is an algorithm for supervised classification of an input into one of two possible outputs.
