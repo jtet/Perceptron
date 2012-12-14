@@ -22,15 +22,16 @@ class Perceptron
     protected $iterations = 0;
 
     protected $errorSum = 0;
-    protected $iterationError;
+    protected $iterationError = 0;
 
     /**
-     * @param $vectorLength
-     * @param $bias
-     * @param $learningRate
+     * @param int   $vectorLength The number of input signals
+     * @param float $bias         Bias factor
+     * @param float $learningRate The learning rate 0 < x <= 1
+     *
      * @throws \InvalidArgumentException
      */
-    public function __construct($vectorLength, $bias = 0, $learningRate = .5)
+    public function __construct($vectorLength, $bias = 0.0, $learningRate = .5)
     {
         if ($vectorLength < 1) {
             throw new \InvalidArgumentException();
@@ -56,7 +57,8 @@ class Perceptron
     }
 
     /**
-     * @param $weightVector
+     * @param array $weightVector
+     *
      * @throws \InvalidArgumentException
      */
     public function setWeightVector($weightVector)
@@ -77,6 +79,7 @@ class Perceptron
 
     /**
      * @param float $bias
+     *
      * @throws \InvalidArgumentException
      */
     public function setBias($bias)
@@ -97,6 +100,7 @@ class Perceptron
 
     /**
      * @param float $learningRate
+     *
      * @throws \InvalidArgumentException
      */
     public function setLearningRate($learningRate)
@@ -116,7 +120,8 @@ class Perceptron
     }
 
     /**
-     * @param $inputVector
+     * @param array $inputVector
+     *
      * @return bool
      * @throws \InvalidArgumentException
      */
@@ -132,8 +137,9 @@ class Perceptron
     }
 
     /**
-     * @param array $inputVector
-     * @param bool $outcome
+     * @param array $inputVector array of input signals
+     * @param bool  $outcome     true/false
+     *
      * @throws \InvalidArgumentException
      */
     public function train($inputVector, $outcome)
@@ -148,18 +154,19 @@ class Perceptron
 
         for ($i = 0; $i < $this->vectorLength; $i++) {
             $this->weightVector[$i] =
-                $this->weightVector[$i] + $this->learningRate * ((int)$outcome - (int)$output) * $inputVector[$i];
+                $this->weightVector[$i] + $this->learningRate * ((int) $outcome - (int) $output) * $inputVector[$i];
         }
 
-        $this->bias = $this->bias + ((int)$outcome - (int)$output);
+        $this->bias = $this->bias + ((int) $outcome - (int) $output);
 
-        $this->errorSum += (int)$outcome - (int)$output;
+        $this->errorSum += (int) $outcome - (int) $output;
         $this->iterationError = 1 / $this->iterations * $this->errorSum;
     }
 
     /**
      * @param array $vector1
      * @param array $vector2
+     *
      * @return number
      */
     private function dotProduct($vector1, $vector2)
