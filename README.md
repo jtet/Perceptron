@@ -1,7 +1,7 @@
 Perceptron
 ==========
 
-[![Build Status](https://secure.travis-ci.org/jtet/Perceptron.png?branch=master)](https://travis-ci.org/jtet/Perceptron)
+[![Build Status](https://api.travis-ci.org/jtet/Perceptron.png?branch)](https://travis-ci.org/jtet/Perceptron)
 
 ##What is a Perceptron?
 
