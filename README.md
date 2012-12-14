@@ -18,7 +18,7 @@ read more at [http://en.wikipedia.org/wiki/Perceptron](http://en.wikipedia.org/w
 while($p->getIterationError() > $x)
 {
     for ($i = 0; $i < count($inputVectors); $i++){
-        $p->train($inputVectors[$i]);
+        $p->train($inputVectors[$i], $outcomes[$i);
     }
 }
 ```
