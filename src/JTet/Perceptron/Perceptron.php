@@ -44,7 +44,7 @@ class Perceptron
         $this->learningRate = $learningRate;
 
         for ($i = 0; $i < $this->vectorLength; $i++) {
-            $this->weightVector[$i] = 1 / $this->vectorLength;
+            $this->weightVector[$i] = rand()/getrandmax() * 2 - 1;
         }
     }
 
