@@ -40,19 +40,19 @@ $i = 0;
 while($i < 100000)
 {
     $input = array(0, 0);
-    $output = true;
+    $output = 1;
     $p->train($input, $output);
 
     $input = array(0, 1);
-    $output = true;
+    $output = 1;
     $p->train($input, $output);
 
     $input = array(1,0);
-    $output = true;
+    $output = 1;
     $p->train($input, $output);
 
     $input = array(1,1);
-    $output = false;
+    $output = 0;
     $p->train($input, $output);
 
     $i++;

@@ -122,7 +122,7 @@ class Perceptron
     /**
      * @param array $inputVector
      *
-     * @return bool
+     * @return int (0 for false, 1 = true)
      * @throws \InvalidArgumentException
      */
     public function test($inputVector)
@@ -133,18 +133,18 @@ class Perceptron
 
         $testResult = $this->dotProduct($this->weightVector, $inputVector) + $this->bias;
 
-        return $testResult > 0 ? true : false;
+        return $testResult > 0 ? 1 : 0;
     }
 
     /**
      * @param array $inputVector array of input signals
-     * @param bool  $outcome     true/false
+     * @param int  $outcome      1 = true / 0 = false
      *
      * @throws \InvalidArgumentException
      */
     public function train($inputVector, $outcome)
     {
-        if (!is_array($inputVector) || !is_bool($outcome)) {
+        if (!is_array($inputVector) || !($outcome == 0 || $outcome == 1)) {
             throw new \InvalidArgumentException();
         }
 

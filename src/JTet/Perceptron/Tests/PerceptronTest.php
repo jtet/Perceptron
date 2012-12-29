@@ -25,28 +25,28 @@ class PerceptronTest extends \PHPUnit_Framework_TestCase
         while($i < 1000)
         {
             $input = array(0, 0);
-            $output = true;
+            $output = 1;
             $p->train($input, $output);
 
             $input = array(0, 1);
-            $output = true;
+            $output = 1;
             $p->train($input, $output);
 
             $input = array(1,0);
-            $output = true;
+            $output = 1;
             $p->train($input, $output);
 
             $input = array(1,1);
-            $output = false;
+            $output = 0;
             $p->train($input, $output);
 
             $i++;
         }
 
-        $this->assertFalse($p->test(array(1,1)));
-        $this->assertTrue($p->test(array(0,1)));
-        $this->assertTrue($p->test(array(1,0)));
-        $this->assertTrue($p->test(array(0,0)));
+        $this->assertFalse((bool) $p->test(array(1,1)));
+        $this->assertTrue((bool) $p->test(array(0,1)));
+        $this->assertTrue((bool) $p->test(array(1,0)));
+        $this->assertTrue((bool) $p->test(array(0,0)));
     }
 
     /**
@@ -60,28 +60,28 @@ class PerceptronTest extends \PHPUnit_Framework_TestCase
         while($i < 1000)
         {
             $input = array(0, 0);
-            $output = false;
+            $output = 0;
             $p->train($input, $output);
 
             $input = array(0, 1);
-            $output = false;
+            $output = 0;
             $p->train($input, $output);
 
             $input = array(1,0);
-            $output = false;
+            $output = 0;
             $p->train($input, $output);
 
             $input = array(1,1);
-            $output = true;
+            $output = 1;
             $p->train($input, $output);
 
             $i++;
         }
 
-        $this->assertTrue($p->test(array(1,1)));
-        $this->assertFalse($p->test(array(0,1)));
-        $this->assertFalse($p->test(array(1,0)));
-        $this->assertFalse($p->test(array(0,0)));
+        $this->assertTrue((bool) $p->test(array(1,1)));
+        $this->assertFalse((bool) $p->test(array(0,1)));
+        $this->assertFalse((bool) $p->test(array(1,0)));
+        $this->assertFalse((bool) $p->test(array(0,0)));
     }
 
     /**
@@ -95,28 +95,28 @@ class PerceptronTest extends \PHPUnit_Framework_TestCase
         while($i < 1000)
         {
             $input = array(0, 0);
-            $output = false;
+            $output = 0;
             $p->train($input, $output);
 
             $input = array(0, 1);
-            $output = true;
+            $output = 1;
             $p->train($input, $output);
 
             $input = array(1,0);
-            $output = true;
+            $output = 1;
             $p->train($input, $output);
 
             $input = array(1,1);
-            $output = true;
+            $output = 1;
             $p->train($input, $output);
 
             $i++;
         }
 
-        $this->assertTrue($p->test(array(1,1)));
-        $this->assertTrue($p->test(array(0,1)));
-        $this->assertTrue($p->test(array(1,0)));
-        $this->assertFalse($p->test(array(0,0)));
+        $this->assertTrue((bool) $p->test(array(1,1)));
+        $this->assertTrue((bool) $p->test(array(0,1)));
+        $this->assertTrue((bool) $p->test(array(1,0)));
+        $this->assertFalse((bool) $p->test(array(0,0)));
     }
 
     /**
@@ -130,28 +130,28 @@ class PerceptronTest extends \PHPUnit_Framework_TestCase
         while($i < 1000)
         {
             $input = array(0, 0);
-            $output = true;
+            $output = 1;
             $p->train($input, $output);
 
             $input = array(0, 1);
-            $output = false;
+            $output = 0;
             $p->train($input, $output);
 
             $input = array(1,0);
-            $output = false;
+            $output = 0;
             $p->train($input, $output);
 
             $input = array(1,1);
-            $output = false;
+            $output = 0;
             $p->train($input, $output);
 
             $i++;
         }
 
-        $this->assertFalse($p->test(array(1,1)));
-        $this->assertFalse($p->test(array(0,1)));
-        $this->assertFalse($p->test(array(1,0)));
-        $this->assertTrue($p->test(array(0,0)));
+        $this->assertFalse((bool) $p->test(array(1,1)));
+        $this->assertFalse((bool) $p->test(array(0,1)));
+        $this->assertFalse((bool) $p->test(array(1,0)));
+        $this->assertTrue((bool) $p->test(array(0,0)));
     }
 
     /**
