@@ -195,6 +195,28 @@ class PerceptronTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests getter for output
+     */
+    public function testOutputGet()
+    {
+        $p = new \JTet\Perceptron\Perceptron(2);
+        $p->test(array(0,0));
+
+        $this->assertNotNull($p->getOutput());
+    }
+
+    /**
+     * tests output not set exception
+     */
+    public function testOutputGetException()
+    {
+        $this->setExpectedException('\RuntimeException');
+        $p = new \JTet\Perceptron\Perceptron(2);
+        $p->getOutput();
+    }
+
+
+    /**
      * Tests getter and setter for bias
      */
     public function testBiasGetSet()

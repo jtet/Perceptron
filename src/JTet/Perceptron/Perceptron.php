@@ -23,6 +23,7 @@ class Perceptron
 
     protected $errorSum = 0;
     protected $iterationError = 0;
+    protected $output = null;
 
     /**
      * @param int   $vectorLength The number of input signals
@@ -45,6 +46,18 @@ class Perceptron
 
         for ($i = 0; $i < $this->vectorLength; $i++) {
             $this->weightVector[$i] = rand()/getrandmax() * 2 - 1;
+        }
+    }
+
+    public function getOutput()
+    {
+        if(is_null($this->output))
+        {
+            throw new \RuntimeException();
+        }
+        else
+        {
+            return $this->output;
         }
     }
 
@@ -133,7 +146,8 @@ class Perceptron
 
         $testResult = $this->dotProduct($this->weightVector, $inputVector) + $this->bias;
 
-        return $testResult > 0 ? 1 : 0;
+        $this->output = $testResult > 0 ? 1 : 0;
+        return $this->output;
     }
 
     /**
