@@ -3,7 +3,7 @@ Perceptron
 
 [![Build Status](https://api.travis-ci.org/jtet/Perceptron.png?branch)](https://travis-ci.org/jtet/Perceptron)
 
-##What is a Perceptron?
+## What is a Perceptron?
 
 ```
 "the perceptron is an algorithm for supervised classification of an input into one of two possible outputs.
@@ -12,7 +12,7 @@ linear predictor function combining a set of weights with the feature vector des
 ```
 read more at [http://en.wikipedia.org/wiki/Perceptron](http://en.wikipedia.org/wiki/Perceptron)
 
-##Training
+## Training
 
 ```php
 while($p->getIterationError() > $x)
@@ -23,13 +23,13 @@ while($p->getIterationError() > $x)
 }
 ```
 
-##Test an Input
+## Test an Input
 
 ```php
 echo $p->test($inputVector)? "True": "False";
 ```
 
-##Example
+## Example
 
 The following code trains the Perceptron to act as a [NAND gate](http://en.wikipedia.org/wiki/NAND_gate)
 
@@ -64,7 +64,7 @@ echo $p->test(array(0,0))? "Correct\n": "Incorrect\n";
 echo $p->test(array(1,0))? "Correct\n": "Incorrect\n";
 ```
 
-##Getting Perceptron
+## Getting Perceptron
 
 Add the following to your [composer.json](http://getcomposer.org) file and run `composer update`.
 
@@ -74,5 +74,5 @@ Add the following to your [composer.json](http://getcomposer.org) file and run `
     }
 ```
 
-##License
+## License
 Perceptron is available for your use under the [OSL-3.0](http://www.spdx.org/licenses/OSL-3.0#licenseText) license.
